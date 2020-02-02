@@ -1,0 +1,17 @@
+<div
+  [style.marginRight.px]="10">
+  <app-resort-list
+    (chosenResortOut)='onChosenResort($event)'
+    fxFlex></app-resort-list>
+</div>
+<div fxLayout="column">
+  <ng-container *ngIf="curr != null">
+    <app-weather
+      [resortWeather]="curr.weather"
+      fxFlex
+      [style.marginBottom.px]="10"></app-weather>
+    <app-social-info
+      [resortSocialInfo]="curr.socialInfo"
+      fxFlex></app-social-info>
+  </ng-container>
+</div>

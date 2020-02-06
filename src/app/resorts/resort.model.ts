@@ -1,5 +1,5 @@
-import { Weather } from './resort-list/weather/weather.model';
-import { SocialInfo } from './resort-list/social-info/social-info.model';
+import { Weather } from './weather/weather.model';
+import { SocialInfo } from './social-info/social-info.model';
 import { ResortType } from './resort-type.enum';
 
 export class Resort {

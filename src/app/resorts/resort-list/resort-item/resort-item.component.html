@@ -1,25 +1,19 @@
-<mat-card
-  class="resort-card"
-  [style.marginBottom.px]="10"
->
-
-  <mat-card-content fxLayout="row">
-    <div class="activity-desc">
-      <h5>Resort Address</h5>
-      <p>{{currentResort.type}}</p>
-      <p>{{currentResort.address}}</p>
-      <h6>{{currentResort.phone}}</h6>
-    </div>
-    <div fxLayout="row" fxLayoutAlign="end">
-      <img matListAvatar src='{{currentResort.img}}'
-           alt=""
-           [style.width.px]="50"
-           [style.height.px]="50"
-      >
-      <img matListAvatar src='{{currentResort.socialInfo.img}}'
-           alt=""
-           [style.width.px]="50"
-           [style.height.px]="50"/>
-    </div>
-  </mat-card-content>
-</mat-card>
+<div class="activity-row">
+  <div class="activity-desc">
+    <h5>Resort Address</h5>
+    <p>{{currentResort.address}}</p>
+    <p>{{currentResort.type}}</p>
+    <h6>Tel: {{currentResort.phone}}</h6>
+  </div>
+  <div class="activity-img">
+    <ul>
+      <li><img src='{{currentResort.img}}' alt=""
+               [style.width.px]="50"
+               [style.height.px]="50"/></li>
+      <li><img src='{{currentResort.socialInfo.img}}' alt=""
+               [style.width.px]="50"
+               [style.height.px]="50"/></li>
+    </ul>
+  </div>
+  <div class="clear"></div>
+</div>

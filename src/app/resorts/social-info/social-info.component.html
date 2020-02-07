@@ -1,17 +1,17 @@
-<mat-card [ngStyle]="{'max-width.px': 400}" class="social-info-card">
-  <mat-card-header fxLayoutAlign="center">
-    <mat-card-title>{{socialInfo.title}}</mat-card-title>
-  </mat-card-header>
-  <img mat-card-image src="{{socialInfo.img}}" alt="">
-  <mat-card-actions fxLayout="row" fxLayoutAlign="space-between">
-    <div fxLayout="column">
-      <div>Followers</div>
-      <div fxLayoutAlign="center">{{socialInfo.followers}}</div>
-    </div>
-    <div fxLayout="column">
-      <div>Following</div>
-      <div fxLayoutAlign="center">{{socialInfo.following}}</div>
-    </div>
-  </mat-card-actions>
-</mat-card>
-
+<div class="teddy-bear">
+  <div class="teddy-text">
+    <h4>{{socialInfo.title}}</h4>
+    <span class="w-line"> </span>
+    <img src="{{socialInfo.img}}" alt=""  class="img-responsive">
+  </div>
+  <div class="teddy-follow">
+    <ul>
+      <li class="folw-h"><h3>{{socialInfo.followers}}</h3>
+        <p>Followers</p>
+      </li>
+      <li><h3>{{socialInfo.following}}</h3>
+        <p>Following</p>
+      </li>
+    </ul>
+  </div>
+</div>

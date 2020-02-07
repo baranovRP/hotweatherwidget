@@ -8,10 +8,10 @@ import { Resort } from './resort.model';
 })
 export class ResortsComponent {
 
-  curr: Resort;
+  resort: Resort;
 
-  onChosenResort(currR: Resort) {
-    this.curr = currR;
+  onChosenResort(resort: Resort) {
+    this.resort = resort;
   }
 
   constructor() { }

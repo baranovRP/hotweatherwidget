@@ -1,12 +1,7 @@
-<mat-card class="weather-card">
-  <mat-card-header fxLayoutAlign="center">
-    <mat-card-title>{{weather.title}}</mat-card-title>
-  </mat-card-header>
-  <mat-card-content>
-    <div>
-      <h2 fxLayoutAlign="center">
-        <img [src]="weather.icon" alt=""/>{{weather.temperature}}°</h2>
-    </div>
-    <h2 fxLayoutAlign="center">Water {{weather.water}}°</h2>
-  </mat-card-content>
-</mat-card>
+<div class="temperatur">
+  <h5>{{weather.title}}</h5>
+  <span class="w-line"> </span>
+  <span class="cloud"> </span>
+  <h2>{{weather.temperature}}<sup class="degree">°</sup></h2>
+  <h6>Water {{weather.water}}<sup class="degree">°</sup></h6>
+</div>

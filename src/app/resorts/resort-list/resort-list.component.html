@@ -1,25 +1,23 @@
-<div>
-  <div class="resort-card" fxLayout="column">
-  <ng-container *ngIf="resortDetail != null">
-    <img mat-card-image
-         src="{{resortDetail.img}}"
-         [style.width.px]="300"
-         alt="">
-  </ng-container>
-    <mat-toolbar
-      fxLayout="row"
-      fxLayoutAlign="space-between center"
-    >
-      <div><a href="#"><span>Hotel</span></a></div>
-      <div><a href="#"><span>Fishing</span></a></div>
-      <div><a href="#"><span>Tours</span></a></div>
-      <div><a href="#"><span>Weather</span></a></div>
-    </mat-toolbar>
-      <mat-list>
+<div class="element-bg-img"><img src="{{resortDetail.img}}" alt="" class="img-responsive"> </div>
+<div class="element-left-bottom">
+  <div class="ele-strip">
+    <ul>
+      <li><a href="#">Hotel</a></li>
+      <li><a href="#">Fishing</a></li>
+      <li><a href="#">Tours</a></li>
+      <li class="anc-bor"><a href="#">Weather</a></li>
+    </ul>
+  </div>
+  <div class="village">
+    <h3>Righteous indignation & like</h3>
+    <span class="line"> </span>
+    <div class="activity_box">
+      <div class="scrollbar" id="style-2">
         <app-resort-item
           *ngFor="let resortEl of resorts"
           [currentResort]="resortEl"
           (click)="chooseResort(resortEl)"></app-resort-item>
-      </mat-list>
+      </div>
+    </div>
   </div>
 </div>

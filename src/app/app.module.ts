@@ -13,6 +13,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { ByTypePipe } from './resorts/resort-list/by-type.pipe';
+import { ResortFilterPipe } from './resorts/resort-list/resort-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     SocialInfoComponent,
     ResortListComponent,
     ResortItemComponent,
+    ByTypePipe,
+    ResortFilterPipe,
   ],
   imports: [
     BrowserModule,

@@ -1,11 +1,15 @@
-<div class="element-bg-img"><img src="{{resortDetail.img}}" alt="" class="img-responsive"> </div>
+<div class="element-bg-img">
+  <img
+    src="{{resortDetail.img}}"
+    alt=""
+    class="img-responsive">
+</div>
 <div class="element-left-bottom">
   <div class="ele-strip">
     <ul>
-      <li><a href="#">Hotel</a></li>
-      <li><a href="#">Fishing</a></li>
-      <li><a href="#">Tours</a></li>
-      <li class="anc-bor"><a href="#">Weather</a></li>
+      <li *ngFor="let resortType of resorts$ | async | byType">
+        <a href="#" (click)="filterResorts($event)">{{resortType}}</a>
+      </li>
     </ul>
   </div>
   <div class="village">
@@ -14,7 +18,7 @@
     <div class="activity_box">
       <div class="scrollbar" id="style-2">
         <app-resort-item
-          *ngFor="let resortEl of resorts"
+          *ngFor="let resortEl of resorts$ | async | resortFilter: filterResortType"
           [currentResort]="resortEl"
           (click)="chooseResort(resortEl)"></app-resort-item>
       </div>

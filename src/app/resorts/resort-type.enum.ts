@@ -1,4 +1,6 @@
 export enum ResortType {
-  HOTEL = 'HOTEL',
-  SPA = 'SPA',
+  HOTEL = 'Hotel',
+  FISHING = 'Fishing',
+  TOURS = 'Tours',
+  WEATHER = 'Weather',
 }

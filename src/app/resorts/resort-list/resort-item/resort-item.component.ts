@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Resort } from '../../resort.model';
+import { IResort } from '../../resort.model';
 
 @Component({
   selector: 'app-resort-item',
@@ -8,7 +8,7 @@ import { Resort } from '../../resort.model';
 })
 export class ResortItemComponent {
 
-  @Input() currentResort: Resort;
+  @Input() currentResort: IResort;
 
   constructor() {}
 

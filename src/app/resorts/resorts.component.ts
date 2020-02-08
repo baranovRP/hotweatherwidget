@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Resort } from './resort.model';
+import { IResort } from './resort.model';
 
 @Component({
   selector: 'app-resorts',
@@ -8,9 +8,9 @@ import { Resort } from './resort.model';
 })
 export class ResortsComponent {
 
-  resort: Resort;
+  resort: IResort;
 
-  onChosenResort(resort: Resort) {
+  onChosenResort(resort: IResort) {
     this.resort = resort;
   }
 

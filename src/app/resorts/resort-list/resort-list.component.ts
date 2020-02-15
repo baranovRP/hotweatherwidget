@@ -1,8 +1,16 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Inject,
+  Input,
+  OnInit,
+  Output,
+} from '@angular/core';
 import { IResort } from '../resort.model';
 import { ResortType } from '../resort-type.enum';
 import { Observable } from 'rxjs';
 import { resorts$ } from '../../mock';
+import { ResortsService } from '../../resorts.service';
 
 @Component({
   selector: 'app-resort-list',
@@ -12,11 +20,11 @@ import { resorts$ } from '../../mock';
 export class ResortListComponent implements OnInit {
 
   public filterResortType: ResortType;
-  public resorts$: Observable<IResort[]> = resorts$;
+  public resorts$: Observable<IResort[]> = this.resortsService.getResorts();
   public resortDetail: IResort;
   @Output() public chosenResortOut = new EventEmitter();
 
-  constructor() { }
+  constructor(private readonly resortsService: ResortsService) { }
 
   ngOnInit() {
     this.resorts$.subscribe((resorts: IResort[]) => {

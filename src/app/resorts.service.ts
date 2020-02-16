@@ -11,10 +11,18 @@ export class ResortsService {
 
   constructor() {
     this.currentResort = resorts[0];
-    console.warn(this.currentResort);
   }
 
   public getResorts(): Observable<IResort[]> {
     return of(Object.assign([], this.resorts));
   }
+
+  public getCurrentResort(): IResort {
+    return Object.assign({}, this.currentResort);
+  }
+
+  public setCurrentResort(currentResort: IResort) {
+    this.currentResort = Object.assign({}, currentResort);
+  }
+
 }

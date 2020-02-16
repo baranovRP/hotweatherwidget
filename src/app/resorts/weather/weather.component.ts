@@ -1,10 +1,10 @@
 import {
   AfterContentChecked,
   Component,
-  Input,
   OnInit,
 } from '@angular/core';
 import { Weather } from './weather.model';
+import { ResortsService } from '../../resorts.service';
 
 @Component({
   selector: 'app-weather',
@@ -13,18 +13,16 @@ import { Weather } from './weather.model';
 })
 export class WeatherComponent implements OnInit, AfterContentChecked {
 
-  @Input() resortWeather: Weather;
-
   public weather: Weather;
 
-  constructor() { }
+  constructor(private readonly resortsService: ResortsService) { }
 
   ngOnInit() {
-    this.weather = this.resortWeather;
+    this.weather = this.resortsService.getCurrentResort().weather;
   }
 
   ngAfterContentChecked(): void {
-    this.weather = this.resortWeather;
+    this.weather = this.resortsService.getCurrentResort().weather;
   }
 
 }

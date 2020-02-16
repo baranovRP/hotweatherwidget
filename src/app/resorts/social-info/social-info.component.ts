@@ -1,5 +1,6 @@
 import { AfterContentChecked, Component, Input, OnInit } from '@angular/core';
 import { SocialInfo } from './social-info.model';
+import { ResortsService } from '../../resorts.service';
 
 @Component({
   selector: 'app-social-info',
@@ -8,18 +9,16 @@ import { SocialInfo } from './social-info.model';
 })
 export class SocialInfoComponent implements OnInit, AfterContentChecked {
 
-  @Input() resortSocialInfo: SocialInfo;
   public socialInfo: SocialInfo;
 
-  constructor() {
-  }
+  constructor(private readonly resortsService: ResortsService) { }
 
   ngOnInit() {
-    this.socialInfo = this.resortSocialInfo;
+    this.socialInfo = this.resortsService.getCurrentResort().socialInfo;
   }
 
   ngAfterContentChecked(): void {
-    this.socialInfo = this.resortSocialInfo;
+    this.socialInfo = this.resortsService.getCurrentResort().socialInfo;
   }
 
 }

@@ -1,16 +1,8 @@
 <div class="element-left">
-  <app-resort-list
-    (chosenResortOut)='onChosenResort($event)'>
-  </app-resort-list>
+  <app-resort-list></app-resort-list>
 </div>
 <div class="element-right">
-  <ng-container *ngIf="resort != null">
-    <app-weather
-      [resortWeather]="resort.weather">
-    </app-weather>
-    <app-social-info
-      [resortSocialInfo]="resort.socialInfo">
-    </app-social-info>
-  </ng-container>
+  <app-weather></app-weather>
+  <app-social-info></app-social-info>
 </div>
 <div class="clear"></div>
